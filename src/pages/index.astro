@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/sections/Header.astro';
+import CanvasHero from '../components/canvas/CanvasHero';
 ---
 
 <Layout title="FUJIFILM X100VI — El arte de ver el mundo">
@@ -9,54 +10,10 @@ import Header from '../components/sections/Header.astro';
     <Header />
 
     <main class="w-full">
-      <!-- Hero Scrollytelling Anchor & Phase 1 Intro Stage -->
-      <section id="overview" class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 pt-12 pb-24 overflow-hidden border-b border-white/[0.06]">
-        <!-- Ambient radial glow -->
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06)_0%,transparent_70%)] pointer-events-none"></div>
-
-        <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-[11px] font-mono tracking-widest text-[#A3A3A3] uppercase mb-6">
-            <span class="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-pulse"></span>
-            FUJIFILM X100VI · SERIE X
-          </div>
-
-          <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.08]">
-            El arte de ver <br class="hidden sm:inline" /> el mundo.
-          </h1>
-
-          <p class="text-base sm:text-lg md:text-xl text-neutral-400 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
-            Diseño analógico atemporal acoplado a la ingeniería digital más avanzada jamás creada por Fujifilm.
-          </p>
-
-          <div class="flex flex-col sm:flex-row items-center gap-4">
-            <a
-              href="#optics"
-              class="px-6 py-3 rounded-full text-xs font-semibold tracking-wider text-black bg-white hover:bg-neutral-100 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] transition-all duration-200"
-            >
-              Explorar Ingeniería
-            </a>
-            <a
-              href="#preorder"
-              class="px-6 py-3 rounded-full text-xs font-semibold tracking-wider text-neutral-300 border border-white/15 bg-white/[0.02] hover:bg-white/[0.08] hover:text-white transition-all duration-200"
-            >
-              Reservar por $1,599 USD
-            </a>
-          </div>
-
-          <!-- Hero Frame Preview Placeholder (Ready for Phase 2 Canvas) -->
-          <div class="mt-16 w-full max-w-3xl aspect-[16/9] rounded-2xl border border-white/10 bg-neutral-950/80 overflow-hidden relative shadow-2xl flex items-center justify-center group">
-            <img
-              src="/frames/frame_001.webp"
-              alt="Fujifilm X100VI Preview"
-              class="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] opacity-90 transition-transform duration-700 group-hover:scale-105"
-              loading="eager"
-            />
-            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono tracking-wider text-neutral-400">
-              FASE 1 COMPLETADA · HERO CANVAS DISPONIBLE PARA FASE 2
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- Hero Scrollytelling Canvas 180 Frames (Fase 2) -->
+      <div id="overview" class="w-full">
+        <CanvasHero client:load />
+      </div>
 
       <!-- Section Anchors for Lenis Testing & Structure Alignment -->
       <section id="optics" class="py-24 px-4 max-w-6xl mx-auto border-b border-white/[0.06]">
