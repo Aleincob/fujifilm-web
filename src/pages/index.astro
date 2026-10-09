@@ -6,6 +6,8 @@ import ExplodedView from '../components/sections/ExplodedView';
 import TactileMechanics from '../components/sections/TactileMechanics.astro';
 import FilmSimulations from '../components/sections/FilmSimulations';
 import SpecsMatrix from '../components/sections/SpecsMatrix';
+import PreorderShowcase from '../components/sections/PreorderShowcase';
+import Footer from '../components/sections/Footer.astro';
 ---
 
 <Layout title="FUJIFILM X100VI — El arte de ver el mundo">
@@ -31,31 +33,11 @@ import SpecsMatrix from '../components/sections/SpecsMatrix';
       <!-- Matriz de Especificaciones Técnicas Pro (Fase 4) -->
       <SpecsMatrix client:visible />
 
-      <section id="preorder" class="py-28 px-4 max-w-6xl mx-auto text-center">
-        <span class="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-3">06 / RESERVA TU EJEMPLAR</span>
-        <h2 class="text-3xl sm:text-5xl font-bold text-white mb-6">La próxima toma te está esperando.</h2>
-        <p class="text-neutral-400 max-w-lg mx-auto text-sm mb-8">
-          Disponible en acabado Silver clásico y Black sigiloso.
-        </p>
-        <div class="w-full max-w-xl mx-auto rounded-2xl border border-white/10 overflow-hidden mb-8">
-          <img src="/images/preorder-duo.webp" alt="X100VI Silver & Black" class="w-full h-auto object-cover" />
-        </div>
-        <button class="px-8 py-3.5 rounded-full text-xs font-semibold tracking-wider text-black bg-white hover:bg-neutral-100 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] transition-all cursor-pointer">
-          Pre-order Ahora — $1,599 USD
-        </button>
-      </section>
+      <!-- Pre-Order & Dual-Tone Showcase (Fase 5) -->
+      <PreorderShowcase client:visible />
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/[0.08] py-12 px-4 text-center text-xs text-neutral-500">
-      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>© FUJIFILM Corporation. Todos los derechos reservados.</div>
-        <div class="flex items-center gap-6">
-          <a href="#overview" class="hover:text-neutral-300 transition-colors">Inicio</a>
-          <a href="#specs" class="hover:text-neutral-300 transition-colors">Especificaciones</a>
-          <a href="#preorder" class="hover:text-neutral-300 transition-colors">Pre-order</a>
-        </div>
-      </div>
-    </footer>
+    <!-- Global Brand & Legal Footer (Fase 5) -->
+    <Footer />
   </div>
 </Layout>
