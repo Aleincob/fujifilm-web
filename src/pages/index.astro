@@ -4,6 +4,8 @@ import Header from '../components/sections/Header.astro';
 import CanvasHero from '../components/canvas/CanvasHero';
 import ExplodedView from '../components/sections/ExplodedView';
 import TactileMechanics from '../components/sections/TactileMechanics.astro';
+import FilmSimulations from '../components/sections/FilmSimulations';
+import SpecsMatrix from '../components/sections/SpecsMatrix';
 ---
 
 <Layout title="FUJIFILM X100VI — El arte de ver el mundo">
@@ -23,54 +25,11 @@ import TactileMechanics from '../components/sections/TactileMechanics.astro';
       <!-- Video Ambient Macro Diales & Control Analógico (Fase 3) -->
       <TactileMechanics />
 
-      <section id="gallery" class="py-24 px-4 max-w-6xl mx-auto border-b border-white/[0.06]">
-        <div class="flex flex-col items-center text-center">
-          <span class="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-3">04 / SIMULACIONES DE PELÍCULA</span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">80 años de química encapsulados.</h2>
-          <p class="text-neutral-400 max-w-xl text-sm leading-relaxed mb-8">
-            20 perfiles cromáticos de leyenda incluyendo el nuevo perfil REALA ACE.
-          </p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
-            <div class="rounded-xl border border-white/10 overflow-hidden bg-neutral-900/40 aspect-[4/3] relative group">
-              <img src="/images/gallery-01-reala.webp" alt="Reala Ace" class="w-full h-full object-cover" />
-              <div class="absolute bottom-2 left-2 px-2 py-1 bg-black/70 rounded text-[10px] font-mono text-neutral-300">REALA ACE</div>
-            </div>
-            <div class="rounded-xl border border-white/10 overflow-hidden bg-neutral-900/40 aspect-[4/3] relative group">
-              <img src="/images/gallery-02-acros.webp" alt="Acros" class="w-full h-full object-cover" />
-              <div class="absolute bottom-2 left-2 px-2 py-1 bg-black/70 rounded text-[10px] font-mono text-neutral-300">ACROS</div>
-            </div>
-            <div class="rounded-xl border border-white/10 overflow-hidden bg-neutral-900/40 aspect-[4/3] relative group">
-              <img src="/images/gallery-03-chrome.webp" alt="Classic Chrome" class="w-full h-full object-cover" />
-              <div class="absolute bottom-2 left-2 px-2 py-1 bg-black/70 rounded text-[10px] font-mono text-neutral-300">CLASSIC CHROME</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- Laboratorio de Simulaciones de Película (Fase 4) -->
+      <FilmSimulations client:visible />
 
-      <section id="specs" class="py-24 px-4 max-w-6xl mx-auto border-b border-white/[0.06]">
-        <div class="flex flex-col items-center text-center">
-          <span class="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-3">05 / ESPECIFICACIONES TÉCNICAS</span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Ingeniería sin concesiones.</h2>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-3xl mt-6 text-left">
-            <div class="p-4 rounded-xl border border-white/10 bg-neutral-900/40">
-              <div class="text-2xl font-bold text-white mb-1">40.2 MP</div>
-              <div class="text-xs text-neutral-400">Sensor X-Trans CMOS 5 HR</div>
-            </div>
-            <div class="p-4 rounded-xl border border-white/10 bg-neutral-900/40">
-              <div class="text-2xl font-bold text-white mb-1">6.0 Pasos</div>
-              <div class="text-xs text-neutral-400">IBIS 5 Ejes Integrado</div>
-            </div>
-            <div class="p-4 rounded-xl border border-white/10 bg-neutral-900/40">
-              <div class="text-2xl font-bold text-white mb-1">6.2K 30p</div>
-              <div class="text-xs text-neutral-400">Grabación interna 4:2:2</div>
-            </div>
-            <div class="p-4 rounded-xl border border-white/10 bg-neutral-900/40">
-              <div class="text-2xl font-bold text-white mb-1">521 g</div>
-              <div class="text-xs text-neutral-400">Cuerpo compacto y ágil</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- Matriz de Especificaciones Técnicas Pro (Fase 4) -->
+      <SpecsMatrix client:visible />
 
       <section id="preorder" class="py-28 px-4 max-w-6xl mx-auto text-center">
         <span class="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-3">06 / RESERVA TU EJEMPLAR</span>
