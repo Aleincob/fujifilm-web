@@ -1,11 +1,171 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/sections/Header.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="FUJIFILM X100VI — El arte de ver el mundo">
+  <div id="top" class="relative w-full">
+    <!-- Sticky Glassmorphic Header -->
+    <Header />
+
+    <main class="w-full">
+      <!-- Hero Scrollytelling Anchor & Phase 1 Intro Stage -->
+      <section id="overview" class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 pt-12 pb-24 overflow-hidden border-b border-white/[0.06]">
+        <!-- Ambient radial glow -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06)_0%,transparent_70%)] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-[11px] font-mono tracking-widest text-[#A3A3A3] uppercase mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-pulse"></span>
+            FUJIFILM X100VI · SERIE X
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.08]">
+            El arte de ver <br class="hidden sm:inline" /> el mundo.
+          </h1>
+
+          <p class="text-base sm:text-lg md:text-xl text-neutral-400 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+            Diseño analógico atemporal acoplado a la ingeniería digital más avanzada jamás creada por Fujifilm.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <a
+              href="#optics"
+              class="px-6 py-3 rounded-full text-xs font-semibold tracking-wider text-black bg-white hover:bg-neutral-100 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] transition-all duration-200"
+            >
+              Explorar Ingeniería
+            </a>
+            <a
+              href="#preorder"
+              class="px-6 py-3 rounded-full text-xs font-semibold tracking-wider text-neutral-300 border border-white/15 bg-white/[0.02] hover:bg-white/[0.08] hover:text-white transition-all duration-200"
+            >
+              Reservar por $1,599 USD
+            </a>
+          </div>
+
+          <!-- Hero Frame Preview Placeholder (Ready for Phase 2 Canvas) -->
+          <div class="mt-16 w-full max-w-3xl aspect-[16/9] rounded-2xl border border-white/10 bg-neutral-950/80 overflow-hidden relative shadow-2xl flex items-center justify-center group">
+            <img
+              src="/frames/frame_001.webp"
+              alt="Fujifilm X100VI Preview"
+              class="w-full h-full object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] opacity-90 transition-transform duration-700 group-hover:scale-105"
+              loading="eager"
+            />
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono tracking-wider text-neutral-400">
+              FASE 1 COMPLETADA · HERO CANVAS DISPONIBLE PARA FASE 2
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Anchors for Lenis Testing & Structure Alignment -->
+      <section id="optics" class="py-24 px-4 max-w-6xl mx-auto border-b border-white/[0.06]">
+        <div class="flex flex-col items-center text-center">
+          <span class="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-3">02 / ANATOMÍA ÓPTICA</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">40.2 Megapíxeles. Sin compromisos.</h2>
+          <p class="text-neutral-400 max-w-xl text-sm leading-relaxed mb-8">
+            Sensor X-Trans CMOS 5 HR con sistema IBIS de 5 ejes y objetivo FUJINON 23mm f/2 II integrado.
+          </p>
+          <div class="w-full max-w-2xl aspect-[16/9] rounded-xl border border-white/10 overflow-hidden bg-neutral-900/40">
+            <img src="/images/img-overview-exploded.webp" alt="Exploded view preview" class="w-full h-full object-contain opacity-75" />
+          </div>
+        </div>
+      </section>
+
+      <section id="mechanics" class="py-24 px-4 max-w-6xl mx-auto border-b border-white/[0.06]">
+        <div class="flex flex-col items-center text-center">
+          <span class="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-3">03 / CONTROL TÁCTIL</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">La memoria en la punta de tus dedos.</h2>
+          <p class="text-neutral-400 max-w-xl text-sm leading-relaxed mb-8">
+            Diales torneados en bloques de aluminio macizo con respuesta háptica calculada.
+          </p>
+          <div class="w-full max-w-xl aspect-video rounded-xl border border-white/10 overflow-hidden bg-neutral-900/40">
+            <video
+              src="/videos/dials-ambient.mp4"
+              class="w-full h-full object-cover"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="py-24 px-4 max-w-6xl mx-auto border-b border-white/[0.06]">
+        <div class="flex flex-col items-center text-center">
+          <span class="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-3">04 / SIMULACIONES DE PELÍCULA</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">80 años de química encapsulados.</h2>
+          <p class="text-neutral-400 max-w-xl text-sm leading-relaxed mb-8">
+            20 perfiles cromáticos de leyenda incluyendo el nuevo perfil REALA ACE.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+            <div class="rounded-xl border border-white/10 overflow-hidden bg-neutral-900/40 aspect-[4/3] relative group">
+              <img src="/images/gallery-01-reala.webp" alt="Reala Ace" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 px-2 py-1 bg-black/70 rounded text-[10px] font-mono text-neutral-300">REALA ACE</div>
+            </div>
+            <div class="rounded-xl border border-white/10 overflow-hidden bg-neutral-900/40 aspect-[4/3] relative group">
+              <img src="/images/gallery-02-acros.webp" alt="Acros" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 px-2 py-1 bg-black/70 rounded text-[10px] font-mono text-neutral-300">ACROS</div>
+            </div>
+            <div class="rounded-xl border border-white/10 overflow-hidden bg-neutral-900/40 aspect-[4/3] relative group">
+              <img src="/images/gallery-03-chrome.webp" alt="Classic Chrome" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 px-2 py-1 bg-black/70 rounded text-[10px] font-mono text-neutral-300">CLASSIC CHROME</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="specs" class="py-24 px-4 max-w-6xl mx-auto border-b border-white/[0.06]">
+        <div class="flex flex-col items-center text-center">
+          <span class="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-3">05 / ESPECIFICACIONES TÉCNICAS</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Ingeniería sin concesiones.</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-3xl mt-6 text-left">
+            <div class="p-4 rounded-xl border border-white/10 bg-neutral-900/40">
+              <div class="text-2xl font-bold text-white mb-1">40.2 MP</div>
+              <div class="text-xs text-neutral-400">Sensor X-Trans CMOS 5 HR</div>
+            </div>
+            <div class="p-4 rounded-xl border border-white/10 bg-neutral-900/40">
+              <div class="text-2xl font-bold text-white mb-1">6.0 Pasos</div>
+              <div class="text-xs text-neutral-400">IBIS 5 Ejes Integrado</div>
+            </div>
+            <div class="p-4 rounded-xl border border-white/10 bg-neutral-900/40">
+              <div class="text-2xl font-bold text-white mb-1">6.2K 30p</div>
+              <div class="text-xs text-neutral-400">Grabación interna 4:2:2</div>
+            </div>
+            <div class="p-4 rounded-xl border border-white/10 bg-neutral-900/40">
+              <div class="text-2xl font-bold text-white mb-1">521 g</div>
+              <div class="text-xs text-neutral-400">Cuerpo compacto y ágil</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="preorder" class="py-28 px-4 max-w-6xl mx-auto text-center">
+        <span class="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-3">06 / RESERVA TU EJEMPLAR</span>
+        <h2 class="text-3xl sm:text-5xl font-bold text-white mb-6">La próxima toma te está esperando.</h2>
+        <p class="text-neutral-400 max-w-lg mx-auto text-sm mb-8">
+          Disponible en acabado Silver clásico y Black sigiloso.
+        </p>
+        <div class="w-full max-w-xl mx-auto rounded-2xl border border-white/10 overflow-hidden mb-8">
+          <img src="/images/preorder-duo.webp" alt="X100VI Silver & Black" class="w-full h-auto object-cover" />
+        </div>
+        <button class="px-8 py-3.5 rounded-full text-xs font-semibold tracking-wider text-black bg-white hover:bg-neutral-100 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] transition-all cursor-pointer">
+          Pre-order Ahora — $1,599 USD
+        </button>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/[0.08] py-12 px-4 text-center text-xs text-neutral-500">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>© FUJIFILM Corporation. Todos los derechos reservados.</div>
+        <div class="flex items-center gap-6">
+          <a href="#overview" class="hover:text-neutral-300 transition-colors">Inicio</a>
+          <a href="#specs" class="hover:text-neutral-300 transition-colors">Especificaciones</a>
+          <a href="#preorder" class="hover:text-neutral-300 transition-colors">Pre-order</a>
+        </div>
+      </div>
+    </footer>
+  </div>
 </Layout>
