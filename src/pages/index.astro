@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/sections/Header.astro';
 import CanvasHero from '../components/canvas/CanvasHero';
+import ExplodedView from '../components/sections/ExplodedView';
+import TactileMechanics from '../components/sections/TactileMechanics.astro';
 ---
 
 <Layout title="FUJIFILM X100VI — El arte de ver el mundo">
@@ -15,39 +17,11 @@ import CanvasHero from '../components/canvas/CanvasHero';
         <CanvasHero client:load />
       </div>
 
-      <!-- Section Anchors for Lenis Testing & Structure Alignment -->
-      <section id="optics" class="py-24 px-4 max-w-6xl mx-auto border-b border-white/[0.06]">
-        <div class="flex flex-col items-center text-center">
-          <span class="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-3">02 / ANATOMÍA ÓPTICA</span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">40.2 Megapíxeles. Sin compromisos.</h2>
-          <p class="text-neutral-400 max-w-xl text-sm leading-relaxed mb-8">
-            Sensor X-Trans CMOS 5 HR con sistema IBIS de 5 ejes y objetivo FUJINON 23mm f/2 II integrado.
-          </p>
-          <div class="w-full max-w-2xl aspect-[16/9] rounded-xl border border-white/10 overflow-hidden bg-neutral-900/40">
-            <img src="/images/img-overview-exploded.webp" alt="Exploded view preview" class="w-full h-full object-contain opacity-75" />
-          </div>
-        </div>
-      </section>
+      <!-- Exploded View Óptico con Hotspots Interactivos (Fase 3) -->
+      <ExplodedView client:visible />
 
-      <section id="mechanics" class="py-24 px-4 max-w-6xl mx-auto border-b border-white/[0.06]">
-        <div class="flex flex-col items-center text-center">
-          <span class="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-3">03 / CONTROL TÁCTIL</span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">La memoria en la punta de tus dedos.</h2>
-          <p class="text-neutral-400 max-w-xl text-sm leading-relaxed mb-8">
-            Diales torneados en bloques de aluminio macizo con respuesta háptica calculada.
-          </p>
-          <div class="w-full max-w-xl aspect-video rounded-xl border border-white/10 overflow-hidden bg-neutral-900/40">
-            <video
-              src="/videos/dials-ambient.mp4"
-              class="w-full h-full object-cover"
-              autoplay
-              loop
-              muted
-              playsinline
-            ></video>
-          </div>
-        </div>
-      </section>
+      <!-- Video Ambient Macro Diales & Control Analógico (Fase 3) -->
+      <TactileMechanics />
 
       <section id="gallery" class="py-24 px-4 max-w-6xl mx-auto border-b border-white/[0.06]">
         <div class="flex flex-col items-center text-center">
