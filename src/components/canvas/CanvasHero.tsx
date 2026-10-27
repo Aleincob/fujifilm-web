@@ -59,12 +59,9 @@ export default function CanvasHero() {
 
     const hRatio = w / iw;
     const vRatio = h / ih;
-    const isPortrait = h > w;
 
-    // Dynamic scale: safe margins across all resolutions
-    const scale = isPortrait
-      ? Math.min(hRatio * 0.96, vRatio * 0.65)
-      : Math.min(hRatio * 0.92, vRatio * 0.88);
+    // Cover scale so the frame always covers 100% vw and 100% vh without any black borders/frame
+    const scale = Math.max(hRatio, vRatio);
 
     const nw = iw * scale;
     const nh = ih * scale;

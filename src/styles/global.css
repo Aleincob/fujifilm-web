@@ -21,6 +21,7 @@ html {
   color: #FAFAFA;
   color-scheme: dark;
   scroll-behavior: auto; /* Lenis handles smooth scrolling */
+  overscroll-behavior-y: none;
 }
 
 body {
