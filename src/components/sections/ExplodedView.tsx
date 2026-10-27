@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 interface ComponentHotspot {
   id: string;
@@ -76,6 +76,28 @@ const HOTSPOTS: ComponentHotspot[] = [
 
 export default function ExplodedView() {
   const [activeId, setActiveId] = useState<string>('sensor');
+  const detailsRef = useRef<HTMLDivElement>(null);
+
+  const handleSelectComponent = (id: string) => {
+    setActiveId(id);
+
+    // Smoothly scroll down to the explanation block so the user immediately sees the specs
+    if (detailsRef.current) {
+      const lenis = typeof window !== 'undefined' ? (window as any).lenis : null;
+      if (lenis) {
+        lenis.scrollTo(detailsRef.current, {
+          offset: -85,
+          duration: 1.2,
+        });
+      } else {
+        const targetY = detailsRef.current.getBoundingClientRect().top + window.scrollY - 85;
+        window.scrollTo({
+          top: targetY,
+          behavior: 'smooth',
+        });
+      }
+    }
+  };
 
   const activeItem = HOTSPOTS.find((h) => h.id === activeId) || HOTSPOTS[0];
 
@@ -107,7 +129,7 @@ export default function ExplodedView() {
             return (
               <button
                 key={item.id}
-                onClick={() => setActiveId(item.id)}
+                onClick={() => handleSelectComponent(item.id)}
                 className={`px-4 py-2 rounded-full text-xs font-mono tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
                   isActive
                     ? 'bg-white text-black font-semibold shadow-[0_0_20px_rgba(255,255,255,0.2)] scale-105'
@@ -137,7 +159,7 @@ export default function ExplodedView() {
             return (
               <button
                 key={item.id}
-                onClick={() => setActiveId(item.id)}
+                onClick={() => handleSelectComponent(item.id)}
                 style={{ left: `${item.x}%`, top: `${item.y}%` }}
                 className={`absolute -translate-x-1/2 -translate-y-1/2 focus:outline-none cursor-pointer z-20 group/pin p-2 transition-transform duration-300 ${
                   isActive ? 'scale-125' : 'scale-100 hover:scale-110'
@@ -171,7 +193,11 @@ export default function ExplodedView() {
         </div>
 
         {/* Selected Component Detailed Specification Card */}
-        <div className="max-w-4xl mx-auto rounded-2xl border border-white/10 bg-neutral-950/80 backdrop-blur-xl p-6 sm:p-8 shadow-2xl transition-all duration-300">
+        <div
+          ref={detailsRef}
+          id="exploded-details-card"
+          className="max-w-4xl mx-auto rounded-2xl border border-white/10 bg-neutral-950/80 backdrop-blur-xl p-6 sm:p-8 shadow-2xl transition-all duration-300 scroll-mt-24"
+        >
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/[0.08] pb-5 mb-6">
             <div>
               <span className="text-[10px] font-mono tracking-widest text-emerald-400 uppercase font-semibold">
